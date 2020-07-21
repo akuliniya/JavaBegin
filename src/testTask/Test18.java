@@ -12,10 +12,11 @@ public class Test18 {
         String file = "C:\\Users\\user\\Desktop\\test16.txt";
         String str;
 
-        System.out.println("В файле "+file+" содержится текст:");
-
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
+
+            if((str = reader.readLine()) != null)
+                System.out.println("В файле "+file+" содержится текст:");
 
             while((str = reader.readLine()) != null)
                 System.out.println(str);
@@ -30,7 +31,7 @@ public class Test18 {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Ведите новый текст для записи в файл.\n" +
-                "Прежний текст будет перезаписан.\n" +
+                "Прежний текст, если он имелся, будет перезаписан.\n" +
                 "Запись в файл завершится, когда вы введете: \"stop\"");
 
             try{
@@ -49,7 +50,7 @@ public class Test18 {
                 writer.close();
 
             }catch (IOException e){
-                System.out.println("Ошибка ввода или записи в файл.\n"+e);
+                System.out.println("Ошибка ввода или записи в файл.\n"+e.getMessage());
             }
 
     }
