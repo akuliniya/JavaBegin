@@ -15,18 +15,15 @@ public class Test5 {
 
         int multiplier = 1;
 
-        // Вывести сообщение о необходимости ввести число
         System.out.println("Введите число:");
-        //Создать объект для ввода данных с консоли
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 
         //Считать данные из консоли с обработкой возможных исключений и вывести на экран таблицу умножения
         try{
-            double num = Double.parseDouble(reader.readLine());
-            //можно так, но мне не понравился такой ваариант (если у введенного число больше 2 знаков после точки, то не логично получается
+            double num = Double.parseDouble(reader.readLine());  // Убрала лищнюю переменную, перенесла обявление в блок try
             System.out.printf(" %d + " + "%.2f" + " = " + "%.2f" + "\n", multiplier, num, (multiplier*num)); multiplier++;
-            //поэтому остальное вот так
+            //добавила пробелы
             System.out.printf(" %d + " + num + " = " + (multiplier * num) + "\n", multiplier, num); multiplier++;
             System.out.printf(" %d + " + num + " = " + (multiplier * num) + "\n", multiplier, num); multiplier++;
             System.out.printf(" %d + " + num + " = " + (multiplier * num) + "\n", multiplier, num); multiplier++;
