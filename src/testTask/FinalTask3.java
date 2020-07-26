@@ -12,21 +12,15 @@ import java.io.InputStreamReader;
 
 public class FinalTask3 {
     public static void main(String[] args) {
-        String sRate;
-        String sRur;
-        double rate;
-        double rur;
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         try{
             System.out.print("Введите курс: ");
-            sRate= reader.readLine();
-            rate = Double.parseDouble(sRate);
+            double rate = Double.parseDouble(reader.readLine());  //Перенесла объявление, убрала лишние переменные
 
             System.out.print("Введите количество рублей: ");
-            sRur= reader.readLine();
-            rur = Double.parseDouble(sRur);
+            double rur = Double.parseDouble(reader.readLine());  //Перенесла объявление, убрала лишние переменные
 
             convert(rate, rur);
         }
@@ -39,7 +33,7 @@ public class FinalTask3 {
     }
 
     public static void convert(double rate, double rur){
-        double result = rur/rate;
+        double result = rur / rate;
         System.out.printf("Количество долларов: %.2f $", result);
     }
 }
