@@ -11,31 +11,26 @@ import java.io.InputStreamReader;
 
 public class Test13 {
     public static void main(String[] args) {
-        //переменные для сохранения введенных в консоли значений
-        String str1="";
-        String str2="";
 
-        //Создать объект для ввода данных с консоли
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        //Считать данные из консоли с обработкой возможного исключения
         try {
             System.out.println("Введите первую строку:");
-            str1 = reader.readLine();
+            String str1 = reader.readLine();  //Перенесла объявление переменной в try
             System.out.println("Введите вторую строку:");
-            str2 = reader.readLine();
+            String str2 = reader.readLine();  //Перенесла объявление переменной в try
+
+            // использовала else if вместо if, перенесла выполнение условий в try
+            if (str1.length() == str2.length())
+                System.out.println("Длины строк равны.");
+            else if (str1.length() > str2.length())
+                System.out.println(str1);
+            else
+                System.out.println(str2);
 
         } catch (IOException e) {
             System.out.println("Кажется что-то пошло не так... \nПопробуйте начать с начала.");
         }
-
-        //Сравнить длины строк
-        if (str1.length() == str2.length())
-            System.out.println("Длины строк равны.");
-        if (str1.length() > str2.length())
-            System.out.println(str1);
-        if (str1.length() < str2.length())
-            System.out.println(str2);
 
     }
 }
