@@ -17,23 +17,16 @@ import java.io.InputStreamReader;
 public class FinalTask1 {
     public static void main(String[] args) {
 
-        String input;       //переменная для сохранения вводимого в консоли значения
-        int decNum;         //переменная для созранения результата (число в десятичном формате)
-
-        //Создать объект для ввода данных с консоли
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        // Вывести сообщение о необходимости ввести число
         System.out.println("Введите число в бинарном формате:");
 
-        //Считать данные из консоли с обработкой возможного исключения
         try{
-            input = reader.readLine();
-            //Преобразовать введенное строковое значение в число в бинарном формате
+            String input = reader.readLine(); //Перенесла объявление переменной, ьеперь она сразу инициалихируется
             if (checkForBinarFormat(input)) {
-                decNum = convert(input);
-                //Вывод на экран результата
-                System.out.println("Ваше число в десятичном формате = " + decNum);
+                System.out.println("Ваше число в десятичном формате = " + convert(input));
             }
+            else  // Перенесла  в else вывод сообщения из метода checkForBinarFormat
+                System.out.println("Введено число не в бинарном формате! Попробуйте начать сначала.");
         }
         catch (IOException e){
             System.out.println("Кажется что-то пошло не так... \nПопробуйте начать с начала.");
@@ -41,11 +34,11 @@ public class FinalTask1 {
     }
 
 
-    //Метод для перевода числоя из двоичной чмстемы в десятичную
+    //Метод для перевода числа из двоичной чмстемы в десятичную
     public static int convert(String str){
-        int n = 0;          //переменная для сохранения результата смещений
+        int n = 0;
         for (int i = 0; i < str.length(); i++) {
-            if ((n > 2000000000) || (n< -2000000000))
+            if (n > 2000000000 || n < -2000000000) //Убрала лишние скобки, добавила пробелы
                 System.out.println("Введено слишком большое число! Результат конвертвции в десятичную систему будет не точным.");
             n <<= 1;
             if (str.charAt(i) == '1') n++;
@@ -56,15 +49,16 @@ public class FinalTask1 {
 
     //Метод для проверки на формат
     public static boolean checkForBinarFormat(String str) {
-        boolean isBinarNum=true;
+        boolean isBimarNum = true;      /* Ваш комментарий "по cути лишняя переменная, можно просто приписать return false в if"
+                                        Нельзя, т.к. возникает ошибка "missing return statement", даже если if без фигурных скобок
+                                        К тому же лучше прервать выполнение метода, когда уже понятно, что число не бинароное
+                                        ну или я что-то не поняла */
         for (int i = 0; i < str.length(); i++)
-            if ((str.charAt(i) != '1') && (str.charAt(i) != '0')) {
-                isBinarNum = false;
-                System.out.println("Введено число не в бинарном формате! Попробуйте начать сначала.");
+            if (str.charAt(i) != '1' && str.charAt(i) != '0') {//Убрала лишние скобки, добавила пробелы
+                isBimarNum = false;
                 break;
             }
-        return isBinarNum;
+        return isBimarNum;
     }
-
 
 }
