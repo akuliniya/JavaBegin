@@ -12,16 +12,16 @@ public class Test10 {
 
         Scanner in = new Scanner(System.in);
         System.out.print("Введите размер матрицы.\nКоличество строк: ");
-        int lines = in.nextInt();
+        int lines = in.nextInt();   //Перенесла объявление переменных
         System.out.print("Количество столбцов: ");
-        int columns = in.nextInt();
+        int columns = in.nextInt(); //Перенесла объявление переменных
 
-        int[][] array = new int[lines][columns];
+        int[][] array = new int[lines][columns];  //Перенесла объявление переменных
 
         System.out.println("Заполните матрицу: ");
 
         for(int i = 0; i < lines; i++){
-            for(int j = 0; j < columns; j++)
+            for(int j = 0; j < columns; j++) //Добавила пробелы
                 array[i][j] = in.nextInt();
         }
 
