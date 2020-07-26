@@ -14,20 +14,13 @@ import java.io.InputStreamReader;
 
 public class Test14 {
     public static void main(String[] args) {
-        String s;        //переменная для сохранения вводимого в консоли значения
-        int x;           //переменная для созранения числа int
-        double y;        //переменная для созранения числа double
-
-        //Создать объект для ввода данных с консоли
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        // Вывести сообщение о необходимости ввести число
         System.out.println("Введите целое число:");
 
-        //Считать данные из консоли с обработкой возможного исключения
         try{
-            s = reader.readLine();
-            x = (int)Integer.parseInt(s);
-            y = x;
+            String s = reader.readLine();  //пренесла объявление переменных в try
+            int x = Integer.parseInt(s);
+            double y = x;
 
             System.out.println(s);
             System.out.println(x);
