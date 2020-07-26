@@ -26,13 +26,13 @@ public class Test6 {
         try {
             // Вывести число x
             System.out.println("Введите число x:");
-            x = Double.parseDouble(reader.readLine());
+            x = Double.parseDouble(reader.readLine());  //Убрала лишние переменные
             // Вывести число y
             System.out.println("Введите число y:");
-            y = Double.parseDouble(reader.readLine());
+            y = Double.parseDouble(reader.readLine());  //Убрала лишние переменные
             // Вывести число z
             System.out.println("Введите число z:");
-            z = Double.parseDouble(reader.readLine());
+            z = Double.parseDouble(reader.readLine());  //Убрала лишние переменные
 
         }catch(IOException e){
             System.out.println("Кажется что-то пошло не так... \nПопробуйте начать с начала.");
@@ -42,14 +42,14 @@ public class Test6 {
         }
 
         //Среднее арифметическое
-        double arithmeticMean = (x + y + z) / 3;
+        double arithmeticMean = (x + y + z) / 3; //Добавила пробелы
         System.out.printf("%.3f\n", arithmeticMean);
 
         //Деление на 2 без остатка
-        int divisionRes = (int)arithmeticMean / 2;
+        int divisionRes = (int)arithmeticMean / 2;  //Добавила пробелы
 
         //Сравнение и вывод
-        if (divisionRes > 3)
+        if (divisionRes > 3)  //Добавила пробелы
             System.out.println("Программа выполнена корректно");
 
     }
