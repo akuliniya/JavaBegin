@@ -14,17 +14,11 @@ import java.io.InputStreamReader;
 
 public class Test6 {
     public static void main(String[] args) {
-        //переменные для хранения вводимых в консоли значений
-        String inputX;
-        String inputY;
-        String inputZ;
 
         //переменные для хранения чисел
-        double x =0;
-        double y =0;
-        double z =0;
-
-
+        double x = 0;
+        double y = 0;
+        double z = 0;
 
         //Создать объект для ввода данных с консоли
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -32,16 +26,13 @@ public class Test6 {
         try {
             // Вывести число x
             System.out.println("Введите число x:");
-            inputX = reader.readLine();
-            x = Double.parseDouble(inputX);
+            x = Double.parseDouble(reader.readLine());
             // Вывести число y
             System.out.println("Введите число y:");
-            inputY = reader.readLine();
-            y = Double.parseDouble(inputY);
+            y = Double.parseDouble(reader.readLine());
             // Вывести число z
             System.out.println("Введите число z:");
-            inputZ = reader.readLine();
-            z = Double.parseDouble(inputZ);
+            z = Double.parseDouble(reader.readLine());
 
         }catch(IOException e){
             System.out.println("Кажется что-то пошло не так... \nПопробуйте начать с начала.");
@@ -51,14 +42,14 @@ public class Test6 {
         }
 
         //Среднее арифметическое
-        double arithmeticMean = (x+y+z)/3;
+        double arithmeticMean = (x + y + z) / 3;
         System.out.printf("%.3f\n", arithmeticMean);
 
         //Деление на 2 без остатка
-        int divisionRes = (int)arithmeticMean/2;
+        int divisionRes = (int)arithmeticMean / 2;
 
         //Сравнение и вывод
-        if (divisionRes>3)
+        if (divisionRes > 3)
             System.out.println("Программа выполнена корректно");
 
     }
