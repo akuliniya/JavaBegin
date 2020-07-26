@@ -14,16 +14,14 @@ import java.nio.file.Path;
 
 public class Test17 {
     public static void main(String[] args) {
-        String file;
-        String str;
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Введите полный путь к файлу, в который нужно произвести запись: ");
         try {
-            file = reader.readLine();
+            String file = reader.readLine();  //Перенесла объявление и проинициализировала
             if (!isTxt(file)){
-                    System.out.println("Вы указали не \'.txt\' файл.\nНачните сначала");
+                    System.out.println("Вы указали не '.txt' файл.\nНачните сначала");
                     return;
             }
 
@@ -34,6 +32,7 @@ public class Test17 {
             System.out.println("Ведите текст для записи в файл.\nЗапись в файл завершится, когда вы введете: \"stop\"");
 
             try{
+                String str = null;  //Проиниуиализировала
                 do{
                     System.out.print(": ");
                     str = reader.readLine();
@@ -61,14 +60,15 @@ public class Test17 {
     }
 
         public static boolean isTxt(String file){
-            boolean isTxt=true;
+            boolean isTxt = true;
             if (!file.endsWith(".txt"))
                 isTxt = false;
             return isTxt;
         }
 
+
         public static boolean isFileExists(String file){
-            boolean isFileExists=false;
+            boolean isFileExists = false;
             Path path = java.nio.file.Paths.get(file);
             if (java.nio.file.Files.exists(path))
                 isFileExists = true;
