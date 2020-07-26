@@ -23,7 +23,7 @@ public class Test7 {
         int number = in.nextInt();
 
 
-        if (number == X || number == Y || number == Z)
+        if (number == X || number == Y || number == Z)  //Добавила пробелы, убрала лишние скобки
             System.out.println("Данное значение имеется в константах");
         else
             System.out.println("Такой константы нет!");
