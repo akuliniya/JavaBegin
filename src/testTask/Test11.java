@@ -9,20 +9,16 @@ import java.io.InputStreamReader;
 
 public class Test11 {
     public static void main(String[] args) {
-        String input = "";       //переменная для сохранения введенного в консоли значения
 
-        //Создать объект для ввода данных с консоли
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        // Вывести сообщение о необходимости ввести число
         System.out.println("Введите строку:");
 
-        //Считать данные из консоли с обработкой возможного исключения
         try {
-            input = reader.readLine();
+            //Убрала вообще переменнцю input, перенесла вывод в блок try
+            System.out.println("Вы ввели строку: \"" + reader.readLine() + "\"");
         } catch (IOException e) {
             System.out.println("Кажется что-то пошло не так... \nПопробуйте начать с начала.");
         }
 
-        System.out.println("Вы ввели строку: \""+input+"\"");
     }
 }
