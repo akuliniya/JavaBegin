@@ -13,7 +13,7 @@ public class Test4 {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Введите число в бинарном формате:");
-        
+
         try{
             String input = reader.readLine(); //Перенесла объявление переменной, ьеперь она сразу инициалихируется
             if (checkForBinarFormat(input)) {
