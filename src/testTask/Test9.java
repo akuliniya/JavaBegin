@@ -9,21 +9,19 @@ import java.util.Scanner;
 
 public class Test9 {
     public static void main(String[] args) {
-        int[] array;
-        int length;
 
         Scanner in = new Scanner(System.in);
         System.out.print("Введите размер массива: ");
-        length = in.nextInt();
-        array = new int[length];
+        int length = in.nextInt();
+        int[] array = new int[length];
 
         System.out.println("Заполните массив: ");
-        for(int i=0;i<length;i++){
+        for(int i = 0; i < length; i++){
             array[i] = in.nextInt();
         }
 
-        for(int i=0;i<array.length;i++){
-            System.out.print((array[i] * 2)+" ");
+        for (int value : array) {
+            System.out.print((value * 2) + " ");
         }
 
     }
