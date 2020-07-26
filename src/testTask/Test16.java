@@ -11,12 +11,11 @@ import java.io.IOException;
 
 public class Test16 {
     public static void main(String[] args) {
-        String str;
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\user\\Desktop\\test16.txt"));
-
-            while((str = reader.readLine()) != null)
+            BufferedReader reader = new BufferedReader(new FileReader("test16.txt"));  //Указала относительный путь
+            String str = null;  //Перенесла объявление переменной и проинициализировала ее
+            while ((str = reader.readLine()) != null)
                 System.out.println(str);
 
         }catch (FileNotFoundException e) {
