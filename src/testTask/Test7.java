@@ -12,9 +12,7 @@ import java.util.Scanner;
 
 public class Test7 {
     public static void main(String[] args) {
-        //переменная для хранения введенного с консоли значения
-        int number;
-
+        
         //константы
         final int X = 13;
         final int Y = 48;
@@ -22,10 +20,10 @@ public class Test7 {
 
         Scanner in = new Scanner(System.in);
         System.out.print("Введите число: ");
-        number = in.nextInt();
+        int number = in.nextInt();
 
 
-        if ((number==X)||(number==Y)||(number==Z))
+        if (number == X || number == Y || number == Z)
             System.out.println("Данное значение имеется в константах");
         else
             System.out.println("Такой константы нет!");
