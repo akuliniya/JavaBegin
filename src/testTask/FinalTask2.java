@@ -11,32 +11,25 @@ import java.util.Scanner;
 
 public class FinalTask2 {
     public static void main(String[] args) {
-        int[] array;
-        int length;
 
         try {
-            //ввести размер массива
             Scanner in = new Scanner(System.in);
             System.out.print("Введите размер массива: ");
-            length = in.nextInt();
-            array = new int[length];
+            int length = in.nextInt();         //Перенесла объявление
+            int[] array = new int[length];      //Перенесла объявление
             if (array.length == 0)
                 return;
 
-            //заполнить массив
             System.out.println("Заполните массив: ");
             for (int i = 0; i < length; i++) {
                 array[i] = in.nextInt();
             }
 
-            //вывести изначальный массив в консоль
             System.out.println("Массив до сортировки:");
             System.out.println(Arrays.toString(array));
 
-            //выполнить сортировку
             quickSort(array, 0, length-1);
-
-            //вывести отсортированный массив в консоль
+            
             System.out.println("Массив после сортировки:");
             System.out.println(Arrays.toString(array));
 
