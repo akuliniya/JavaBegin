@@ -13,10 +13,7 @@ import java.io.InputStreamReader;
 public class Test5 {
     public static void main(String[] args) {
 
-        String input;           //переменная для сохранения вводимого в консоли значения
-        double num;            //переменная для сохранения числа
         int multiplier = 1;
-
 
         // Вывести сообщение о необходимости ввести число
         System.out.println("Введите число:");
@@ -26,20 +23,19 @@ public class Test5 {
 
         //Считать данные из консоли с обработкой возможных исключений и вывести на экран таблицу умножения
         try{
-            input = reader.readLine();
-            num = Double.parseDouble(input);
+            double num = Double.parseDouble(reader.readLine());
             //можно так, но мне не понравился такой ваариант (если у введенного число больше 2 знаков после точки, то не логично получается
-            System.out.printf(" %d + "+"%.2f"+" = "+"%.2f"+"\n", multiplier, num, (multiplier*num)); multiplier++;
+            System.out.printf(" %d + " + "%.2f" + " = " + "%.2f" + "\n", multiplier, num, (multiplier*num)); multiplier++;
             //поэтому остальное вот так
-            System.out.printf(" %d + "+num+" = "+(multiplier*num)+"\n", multiplier, num); multiplier++;
-            System.out.printf(" %d + "+num+" = "+(multiplier*num)+"\n", multiplier, num); multiplier++;
-            System.out.printf(" %d + "+num+" = "+(multiplier*num)+"\n", multiplier, num); multiplier++;
-            System.out.printf(" %d + "+num+" = "+(multiplier*num)+"\n", multiplier, num); multiplier++;
-            System.out.printf(" %d + "+num+" = "+(multiplier*num)+"\n", multiplier, num); multiplier++;
-            System.out.printf(" %d + "+num+" = "+(multiplier*num)+"\n", multiplier, num); multiplier++;
-            System.out.printf(" %d + "+num+" = "+(multiplier*num)+"\n", multiplier, num); multiplier++;
-            System.out.printf(" %d + "+num+" = "+(multiplier*num)+"\n", multiplier, num); multiplier++;
-            System.out.printf("%d + "+num+" = "+(multiplier*num)+"\n", multiplier, num);
+            System.out.printf(" %d + " + num + " = " + (multiplier * num) + "\n", multiplier, num); multiplier++;
+            System.out.printf(" %d + " + num + " = " + (multiplier * num) + "\n", multiplier, num); multiplier++;
+            System.out.printf(" %d + " + num + " = " + (multiplier * num) + "\n", multiplier, num); multiplier++;
+            System.out.printf(" %d + " + num + " = " + (multiplier * num) + "\n", multiplier, num); multiplier++;
+            System.out.printf(" %d + " + num + " = " + (multiplier * num) + "\n", multiplier, num); multiplier++;
+            System.out.printf(" %d + " + num + " = " + (multiplier * num) + "\n", multiplier, num); multiplier++;
+            System.out.printf(" %d + " + num + " = " + (multiplier * num) + "\n", multiplier, num); multiplier++;
+            System.out.printf(" %d + " + num + " = " + (multiplier * num) + "\n", multiplier, num); multiplier++;
+            System.out.printf("%d + " + num + " = " + (multiplier * num) + "\n", multiplier, num);
 
         }
         catch (IOException e){
