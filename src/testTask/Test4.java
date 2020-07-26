@@ -11,9 +11,6 @@ import java.io.InputStreamReader;
 public class Test4 {
     public static void main(String[] args) {
 
-        String input;       //переменная для сохранения вводимого в консоли значения
-        int decNum;         //переменная для созранения результата (число в десятичном формате)
-
         //Создать объект для ввода данных с консоли
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         // Вывести сообщение о необходимости ввести число
@@ -21,12 +18,11 @@ public class Test4 {
 
         //Считать данные из консоли с обработкой возможного исключения
         try{
-            input = reader.readLine();
+            String input = reader.readLine(); //переменная для сохранения вводимого в консоли значения
             //Преобразовать введенное строковое значение в число в бинарном формате
             if (checkForBinarFormat(input)) {
-                decNum = convert(input);
                 //Вывод на экран результата
-                System.out.println("Ваше число в десятичном формате = " + decNum);
+                System.out.println("Ваше число в десятичном формате = " + convert(input));
             }
         }
         catch (IOException e){
@@ -35,11 +31,11 @@ public class Test4 {
     }
 
 
-    //Метод для перевода числоя из двоичной чмстемы в десятичную
+    //Метод для перевода числа из двоичной чмстемы в десятичную
     public static int convert(String str){
         int n = 0;          //переменная для сохранения результата смещений
         for (int i = 0; i < str.length(); i++) {
-            if ((n > 2000000000) || (n< -2000000000))
+            if (n > 2000000000 || n < -2000000000)
                 System.out.println("Введено слишком большое число! Результат конвертвции в десятичную систему будет не точным.");
             n <<= 1;
             if (str.charAt(i) == '1') n++;
@@ -50,9 +46,9 @@ public class Test4 {
 
     //Метод для проверки на формат
     public static boolean checkForBinarFormat(String str) {
-        boolean isBinarNum=true;
+        boolean isBinarNum = true;
         for (int i = 0; i < str.length(); i++)
-            if ((str.charAt(i) != '1') && (str.charAt(i) != '0')) {
+            if (str.charAt(i) != '1' && str.charAt(i) != '0') {
                 isBinarNum = false;
                 System.out.println("Введено число не в бинарном формате! Попробуйте начать сначала.");
                 break;
