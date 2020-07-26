@@ -16,12 +16,12 @@ public class Test9 {
         int[] array = new int[length];
 
         System.out.println("Заполните массив: ");
-        for(int i = 0; i < length; i++){
+        for(int i = 0; i < length; i++){ //Добавила пробелы
             array[i] = in.nextInt();
         }
 
         for (int value : array) {
-            System.out.print((value * 2) + " ");
+            System.out.print((value * 2) + " "); //Добавила пробелы
         }
 
     }
