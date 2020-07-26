@@ -29,7 +29,7 @@ public class FinalTask2 {
             System.out.println(Arrays.toString(array));
 
             quickSort(array, 0, length-1);
-            
+
             System.out.println("Массив после сортировки:");
             System.out.println(Arrays.toString(array));
 
@@ -43,7 +43,7 @@ public class FinalTask2 {
     public static void quickSort(int[] source, int leftBorder, int rightBorder){
         int leftMarker = leftBorder;                        //установить левый марке = левой границе массива
         int rightMarker = rightBorder;                      //установить правый маркер = правой границе массива
-        int pivot = source[(leftMarker+rightMarker)/2];     //найти опорный элемент - pivot - ~средний член массива
+        int pivot = source[(leftMarker + rightMarker) / 2];     //найти опорный элемент - pivot - ~средний член массива
 
         do{
             //сдвигаем левый маркер вправо пока элемент в позиции левого маркера гн станет >=pivot
