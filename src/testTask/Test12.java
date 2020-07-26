@@ -9,24 +9,16 @@ import java.io.InputStreamReader;
  */
 public class Test12 {
     public static void main(String[] args) {
-        //переменная для сохранения введенной строки
-        String str="";
 
-        //Создать объект для ввода данных с консоли
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        //Считать данные из консоли с обработкой возможного исключения
         try {
             System.out.print("Вводи уже свою строку: ");
-            str = reader.readLine();
-
+            System.out.println(reader.readLine().replaceAll(" ", ""));  //убрала лищнюю переменную, перенесла вывод в блок try
 
         } catch (IOException e) {
             System.out.println("Кажется что-то пошло не так... \nПопробуйте начать с начала.");
         }
-
-        //Удалить пробелы и вывести в консоль
-        System.out.println(str.replaceAll(" ", ""));
 
     }
 
