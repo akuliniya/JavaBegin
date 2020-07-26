@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class Test7 {
     public static void main(String[] args) {
-        
+
         //константы
         final int X = 13;
         final int Y = 48;
