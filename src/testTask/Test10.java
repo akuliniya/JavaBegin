@@ -9,28 +9,28 @@ import java.util.Scanner;
 
 public class Test10 {
     public static void main(String[] args) {
-        int[][] array;
-        int lines;
-        int columns;
 
         Scanner in = new Scanner(System.in);
         System.out.print("Введите размер матрицы.\nКоличество строк: ");
-        lines = in.nextInt();
+        int lines = in.nextInt();
         System.out.print("Количество столбцов: ");
-        columns = in.nextInt();
+        int columns = in.nextInt();
 
-        array = new int[lines][columns];
+        int[][] array = new int[lines][columns];
 
         System.out.println("Заполните матрицу: ");
 
-        for(int i=0;i<lines;i++){
-            for(int j=0;j<columns;j++)
+        for(int i = 0; i < lines; i++){
+            for(int j = 0; j < columns; j++)
                 array[i][j] = in.nextInt();
         }
 
-        for(int i=0;i<lines;i++){
-            for(int j=0;j<columns;j++) {
-                System.out.print((array[i][j] * 3) + " ");
+        for(int i = 0; i < lines; i++){
+            for(int j = 0; j < columns; j++) {
+                if (i < 1) //Исправила. Умножается только первая строка
+                    System.out.print((array[i][j] * 3) + " ");
+                else
+                    System.out.print(array[i][j] + " ");
             }
             System.out.println();
         }
